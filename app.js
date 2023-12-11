@@ -92,7 +92,7 @@ var items = [
 
 function updateCart() {
   let cart = 0;
-  for (i = 0; i < items.length; i++) {
+  for (index = 0; index < items.length; index++) {
     cart = cart + items[index].quantity;
   }
   cartValue.innerHTML = cart;
@@ -111,10 +111,10 @@ var finalCents = 0;
 function updatePrice() {
   let totalPriceInCents = 0;
 
-  for (i = 0; i < items.length; i++) {
+  for (index = 0; index < items.length; index++) {
     totalPriceInCents =
       totalPriceInCents +
-      items[i].quantity * (items[i].dollars * 100 + items[i].cents);
+      items[index].quantity * (items[index].dollars * 100 + items[index].cents);
   }
   finalDollars = Math.floor(totalPriceInCents / 100);
   finalCents = totalPriceInCents % 100;
@@ -125,13 +125,13 @@ cartButton.onclick = () => {
   updatePrice();
 
 
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].quantity != 0) {
+  for (let index = 0; index < items.length; index++) {
+    if (items[index].quantity != 0) {
       console.log(
         "Item name: " +
           items[index].name +
           " - Quantity: " +
-          items[i].quantity
+          items[index].quantity
       );
     }
   }
